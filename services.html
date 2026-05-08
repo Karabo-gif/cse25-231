@@ -39,85 +39,223 @@
     </header>
 
     <main>
-        <div class="services1">
+        <div class="services_hero">
             <h1>Our Services</h1>
-
-            <div class="service_cards1">
-
-                <div class="card1">
-                    <h2>Quick Wash</h2>
-                    <p>Includes:<br>
-                        Exterior wash and dry<br>
-                        Tire and wheel cleaning<br>
-                        Window cleaning
-                    </p>
-                </div>
-
-                <div class="card2">
-                    <h2>Full Intensive Wash</h2>
-                    <p>Includes:<br>
-                        Exterior wash and wax<br>
-                        Interior vacuuming and window cleaning<br>
-                        Tire and wheel cleaning<br>
-                        Undercarriage wash
-                    </p>
-                </div>
-
-                <div class="card3">
-                    <h2>Interior Detailing</h2>
-                    <p>Includes:<br>
-                        Deep cleaning of carpets and upholstery<br>
-                        Leather conditioning<br>
-                        Dashboard and console cleaning<br>
-                        Odor elimination
-                    </p>
-                </div>
-
-            </div>
-
-            <div class="add-service1">
-                <h2>Add a Custom Service</h2>
-                <p>If you would like to request a custom wash and detailing package,
-                    insert your request here and we will get back to you with a quote and availability.
-                </p>
-
-                <form class="custom-options1">
-                    <h3>Select Your Services</h3>
-
-                    <label>
-                        <input type="checkbox" name="service" value="exterior">
-                        Exterior Wash
-                    </label>
-                    <label>
-                        <input type="checkbox" name="service" value="interior">
-                        Interior Clean
-                    </label>
-                    <label>
-                        <input type="checkbox" name="service" value="wax">
-                        Wax and Polish
-                    </label>
-                    <label>
-                        <input type="checkbox" name="service" value="vacuum">
-                        Vacuum
-                    </label>
-                    <label>
-                        <input type="checkbox" name="service" value="tyres">
-                        Tyre Shine
-                    </label>
-                    <label>
-                        <input type="checkbox" name="service" value="detailing">
-                        Full Detailing
-                    </label>
-                    <label>
-                        <input type="checkbox" name="service" value="engine">
-                        Engine Clean
-                    </label>
-
-                    <button type="submit" class="btn">Submit Request</button>
-                </form>
-            </div>
-
         </div>
+
+        <div class="services_intro">
+            <p>select your vehicle type to view available services and pricing</p>
+        </div>
+
+        <!-- Car buttons -->
+        <div class="carbuttons">
+            <div class="sedan_services">
+                <a href="#" class="sedan" onclick="showImage('sedan_image')">Sedan</a>
+            </div>
+            <div class="coupe_services">
+                <a href="#" class="coupe" onclick="showImage('coupe_image')">Coupe</a>
+            </div> 
+            <div class="hatchback_services">
+                <a href="#" class="hatchback" onclick="showImage('hatchback_image')">Hatchback</a>
+            </div> 
+            <div class="suv_services">
+                <a href="#" class="suv" onclick="showImage('suv_image')">SUV</a>
+            </div>
+        </div>
+
+         <!-- Car images -->
+            <div class="car_image" id="sedan_image" style="display: none;">
+                <img src="S 680 Maybach.jpg" alt="Sedan">
+            </div>
+            <div class="car_image" id="coupe_image" style="display: none;">
+                <img src="C 63 S COUPE AMG.jpg" alt="Coupe">
+            </div>
+            <div class="car_image" id="hatchback_image" style="display: none;">
+                <img src="A CLASS AMG.jpg" alt="Hatchback">
+            </div>
+            <div class="car_image" id="suv_image" style="display: none;">
+                <img src="SUV.png" alt="SUV">
+            </div>
+
+        <!-- Reservation bar (hidden by default) -->
+        <div class="reservation_bar" id="reservation_bar" style="display: none;">
+            <h3>Reserve a Slot</h3>
+                <div class="reservation_inputs">
+                    <input type="date" id="reservation_date" placeholder="Select Date">
+        <input type="time" id="reservation_time" placeholder="Select Time">
+                    <button class="reserve_btn" onclick="reserveSlot()">Reserve</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Service cards -->
+        <div class="service_cards1">
+            <div class="card1" id="card1">
+                <h2>Quick Wash</h2>
+                <p>Includes:<br>
+                    Exterior wash and dry<br>
+                    Tire and wheel cleaning<br>
+                    Window cleaning
+                </p>
+            </div>
+            <div class="card2" id="card2">
+                <h2>Full Intensive Wash</h2>
+                <p>Includes:<br>
+                    Exterior wash and wax<br>
+                    Interior vacuuming and window cleaning<br>
+                    Tire and wheel cleaning<br>
+                    Undercarriage wash
+                </p>
+            </div>
+            <div class="card3" id="card3">
+                <h2>Interior Detailing</h2>
+                <p>Includes:<br>
+                    Deep cleaning of carpets and upholstery<br>
+                    Leather conditioning<br>
+                    Dashboard and console cleaning<br>
+                    Odor elimination
+                </p>
+            </div>
+        </div>
+
+        <!-- Custom service form -->
+        <div class="add-service1">
+            <h2>Add a Custom Service</h2>
+            <p>If you would like to request a custom wash and detailing package,
+                insert your request here and we will get back to you with a quote and availability.
+            </p>
+            <form class="custom-options1">
+                <h3>Select Your Services</h3>
+                <label>
+                    <input type="checkbox" name="service" value="exterior">
+                    Exterior Wash
+                </label>
+                <label>
+                    <input type="checkbox" name="service" value="interior">
+                    Interior Clean
+                </label>
+                <label>
+                    <input type="checkbox" name="service" value="wax">
+                    Wax and Polish
+                </label>
+                <label>
+                    <input type="checkbox" name="service" value="vacuum">
+                    Vacuum
+                </label>
+                <label>
+                    <input type="checkbox" name="service" value="tyres">
+                    Tyre Shine
+                </label>
+                <label>
+                    <input type="checkbox" name="service" value="detailing">
+                    Full Detailing
+                </label>
+                <label>
+                    <input type="checkbox" name="service" value="engine">
+                    Engine Clean
+                </label>
+                <button type="submit" class="btn">Submit Request</button>
+            </form>
+        </div>
+
     </main>
+
+    <footer>
+        <div class="Copyrights">
+            <p>&copy; 2024 Crossroads Car Wash and Valet. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        var carData = {
+            sedan: {
+                card1: { title: "Quick Wash", price: "P80", details: "Exterior wash and dry<br>Tire and wheel cleaning<br>Window cleaning" },
+                card2: { title: "Full Intensive Wash", price: "P150", details: "Exterior wash and wax<br>Interior vacuuming<br>Tire and wheel cleaning<br>Undercarriage wash" },
+                card3: { title: "Interior Detailing", price: "P200", details: "Deep cleaning of carpets<br>Leather conditioning<br>Dashboard cleaning<br>Odor elimination" }
+            },
+            coupe: {
+                card1: { title: "Quick Wash", price: "P90", details: "Exterior wash and dry<br>Tire and wheel cleaning<br>Window cleaning" },
+                card2: { title: "Full Intensive Wash", price: "P170", details: "Exterior wash and wax<br>Interior vacuuming<br>Tire and wheel cleaning<br>Undercarriage wash" },
+                card3: { title: "Interior Detailing", price: "P220", details: "Deep cleaning of carpets<br>Leather conditioning<br>Dashboard cleaning<br>Odor elimination" }
+            },
+            hatchback: {
+                card1: { title: "Quick Wash", price: "P70", details: "Exterior wash and dry<br>Tire and wheel cleaning<br>Window cleaning" },
+                card2: { title: "Full Intensive Wash", price: "P140", details: "Exterior wash and wax<br>Interior vacuuming<br>Tire and wheel cleaning<br>Undercarriage wash" },
+                card3: { title: "Interior Detailing", price: "P180", details: "Deep cleaning of carpets<br>Leather conditioning<br>Dashboard cleaning<br>Odor elimination" }
+            },
+            suv: {
+                card1: { title: "Quick Wash", price: "P120", details: "Exterior wash and dry<br>Tire and wheel cleaning<br>Window cleaning" },
+                card2: { title: "Full Intensive Wash", price: "P220", details: "Exterior wash and wax<br>Interior vacuuming<br>Tire and wheel cleaning<br>Undercarriage wash" },
+                card3: { title: "Interior Detailing", price: "P270", details: "Deep cleaning of carpets<br>Leather conditioning<br>Dashboard cleaning<br>Odor elimination" }
+            }
+        };
+
+        function showImage(id) {
+    var selected = document.getElementById(id);
+
+    if(selected.style.display === 'block'){
+        selected.style.display = 'none';
+        document.getElementById('reservation_bar').style.display = 'none';
+        resetCards();
+        return;
+    }
+
+    var allImages = document.querySelectorAll('.car_image');
+    allImages.forEach(function(img) {
+        img.style.display = 'none';
+    });
+
+    selected.style.display = 'block';
+    document.getElementById('reservation_bar').style.display = 'block';
+
+    var carType = id.replace('_image', '');
+    updateCards(carType);
+}
+
+function updateCards(carType) {
+    var data = carData[carType];
+    document.getElementById('card1').innerHTML =
+        '<h2>' + data.card1.title + '</h2>' +
+        '<h3 style="color:#ffcc00; margin: 10px 0;">Price: ' + data.card1.price + '</h3>' +
+        '<p>' + data.card1.details + '</p>';
+    document.getElementById('card2').innerHTML =
+        '<h2>' + data.card2.title + '</h2>' +
+        '<h3 style="color:#ffcc00; margin: 10px 0;">Price: ' + data.card2.price + '</h3>' +
+        '<p>' + data.card2.details + '</p>';
+    document.getElementById('card3').innerHTML =
+        '<h2>' + data.card3.title + '</h2>' +
+        '<h3 style="color:#ffcc00; margin: 10px 0;">Price: ' + data.card3.price + '</h3>' +
+        '<p>' + data.card3.details + '</p>';
+}
+
+function resetCards() {
+    document.getElementById('card1').innerHTML =
+        '<h2>Quick Wash</h2>' +
+        '<p>Includes:<br>Exterior wash and dry<br>Tire and wheel cleaning<br>Window cleaning</p>';
+    document.getElementById('card2').innerHTML =
+        '<h2>Full Intensive Wash</h2>' +
+        '<p>Includes:<br>Exterior wash and wax<br>Interior vacuuming and window cleaning<br>Tire and wheel cleaning<br>Undercarriage wash</p>';
+    document.getElementById('card3').innerHTML =
+        '<h2>Interior Detailing</h2>' +
+        '<p>Includes:<br>Deep cleaning of carpets and upholstery<br>Leather conditioning<br>Dashboard and console cleaning<br>Odor elimination</p>';
+}
+
+function reserveSlot() {
+    var date = document.getElementById('reservation_date').value;
+    var time = document.getElementById('reservation_time').value;
+
+    if(date === '' || time === ''){
+        alert('Please select both a date and a time!');
+        return;
+    }
+
+    alert('Your reservation has been confirmed for ' + date + ' at ' + time + '!');
+
+    document.getElementById('reservation_date').value = '';
+    document.getElementById('reservation_time').value = '';
+    document.getElementById('reservation_bar').style.display = 'none';
+}
+    </script>
+
 </body>
 </html>
