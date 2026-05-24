@@ -47,29 +47,31 @@
         </div>
     </div>
     </header>
-            <div class="reviews_hero">
-                <h1>Customer Reviews</h1>
-            </div>
+           
     <main>
-        <form class="review-form">
-            <div class="form-header">
+          <section class="reviews_hero">
                 <h1>Customer Reviews</h1>
-                <p>We value your feedback! Please take a moment to share your experience with us.</p>
-            </div>
-            <div class="name">
-                <label>Name</label>
-                    <input type="text" placeholder="Enter your name">
-            </div>
-            <div class="email">
-                <label>Email</label>
-                    <input type="email" placeholder="Enter your email">
-            </div>
-            <div class="message">
-                <label>Message</label>
-                    <textarea placeholder="Write your feedback here"></textarea>
-            </div>
-            <button type="submit">Submit</button>
-        </form>
+            </section>
+
+       <form class="review-form">
+    <div class="form-header">
+        <h1>Customer Reviews</h1>
+        <p>We value your feedback! Please take a moment to share your experience with us.</p>
+    </div>
+    <div class="name">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+    </div>
+    <div class="email">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+    </div>
+    <div class="message">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Write your feedback here" required></textarea>
+    </div>
+    <button type="submit">Submit</button>
+</form>
     </main>
     <footer>
         <div class="Copyrights">
